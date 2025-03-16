@@ -1,8 +1,9 @@
 
-if not isClient() then return end
+if not isServer() then return end
 if not SimpleLeaderboard then return end
 if not SimpleLeaderboard.Server then return end
 
+SimpleLeaderboard.Server.Commands = SimpleLeaderboard.Commands
 local ServerCommands = SimpleLeaderboard.Server.Commands
 local mod_name = SimpleLeaderboard.MOD_NAME
 

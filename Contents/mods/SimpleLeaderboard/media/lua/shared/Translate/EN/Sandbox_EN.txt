@@ -1,0 +1,25 @@
+
+Sandbox_EN = {
+    Sandbox_SimpleLeaderboard = "SimpleLeaderboard"
+
+    Sandbox_SimpleLeaderboardLeaderboardSize = "LeaderboardSize"
+    Sandbox_SimpleLeaderboardLeaderboardSize_tooltip = "LeaderboardSize_tooltip"
+
+    Sandbox_SimpleLeaderboardMaxDataRequestInterval = "MaxDataRequestInterval"
+    Sandbox_SimpleLeaderboardMaxDataRequestInterval_tooltip = "MaxDataRequestInterval_tooltip"
+
+    Sandbox_SimpleLeaderboardDataBroadcastInterval = "DataBroadcastInterval"
+    Sandbox_SimpleLeaderboardDataBroadcastInterval_tooltip = "DataBroadcastInterval_tooltip"
+
+    Sandbox_SimpleLeaderboardDataIntakeInterval = "DataIntakeInterval"
+    Sandbox_SimpleLeaderboardDataIntakeInterval_tooltip = "DataIntakeInterval_tooltip"
+
+    Sandbox_SimpleLeaderboardArchiveSweepInterval = "ArchiveSweepInterval"
+    Sandbox_SimpleLeaderboardArchiveSweepInterval_tooltip = "ArchiveSweepInterval_tooltip"
+
+    Sandbox_SimpleLeaderboardArchiveInactivityThreshold = "ArchiveInactivityThreshold"
+    Sandbox_SimpleLeaderboardArchiveInactivityThreshold_tooltip = "ArchiveInactivityThreshold_tooltip"
+}
+
+
+

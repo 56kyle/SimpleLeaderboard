@@ -3,12 +3,16 @@ if not SimpleLeaderboard then return end
 
 local Leaderboard = SimpleLeaderboard.Leaderboard
 
-Leaderboard.name = "SimpleLeaderboard"
-Leaderboard.leaders_table_name_suffix = "Leaders"
-Leaderboard.records_table_name_suffix = "Records"
+local mod_name = SimpleLeaderboard.MOD_NAME
+
+
+Leaderboard.MODULE_PREFIX = "Leaderboard"
+Leaderboard.TABLE_PREFIX = mod_name..Leaderboard.MODULE_PREFIX
+
+Leaderboard.LEADERS_TABLE_NAME_SUFFIX = "Leaders"
+Leaderboard.RECORDS_TABLE_NAME_SUFFIX = "Records"
 
 Leaderboard.registered_leaderboards = Leaderboard.registered_leaderboards or {}
-
 
 ---@public
 ---@class
@@ -25,8 +29,8 @@ end
 ---@public
 ---@return nil
 function Leaderboard:setup()
-    self.leaders_table_name = self.name .. self.leaders_table_name_suffix
-    self.records_table_name = self.name .. self.records_table_name_suffix
+    self.LEADERS_TABLE_NAME = self.TABLE_PREFIX .. self.LEADERS_TABLE_NAME_SUFFIX
+    self.RECORDS_TABLE_NAME = self.TABLE_PREFIX .. self.RECORDS_TABLE_NAME_SUFFIX
 
     self.leaders_table = ModData.getOrCreate(self.leaders_table_name)
     self.records_table = ModData.getOrCreate(self.records_table_name)
@@ -49,19 +53,18 @@ function Leaderboard:isLeader(username)
     return self.leaders_table.exists(username)
 end
 
-
----@private
----@return fun(key: string, data: table|false)
-function Leaderboard:getUpdateRecordCallback()
-    ---@private
-    ---@param key string
-    ---@param data table|false
-    ---@return nil
-    local function updateLeadersOnRecordChange(key, data)
-        if key == self.records_table_name
-
-    end
-end
-
-Events.OnReceiveGlobalModData.Add()
-
+--
+-----@private
+-----@return fun(key: string, data: table|false)
+--function Leaderboard:getUpdateRecordCallback()
+--    ---@private
+--    ---@param key string
+--    ---@param data table|false
+--    ---@return nil
+--    local function updateLeadersOnRecordChange(key, data)
+--        if key:find(self.) then
+--
+--        end
+--
+--    end
+--end

@@ -2,5 +2,9 @@ if not SimpleLeaderboard then return end
 
 local Ignore = SimpleLeaderboard.Server.Ignore
 
-Ignore.ignored_players_table_name = "SimpleLeaderboardIgnoredPlayers"
-Ignore.ignored_players = ModData.getOrCreate(Ignore.ignored_players_table_name)
+local mod_name = SimpleLeaderboard.MOD_NAME
+
+Ignore.MODULE_PREFIX = "Ignore"
+Ignore.TABLE_PREFIX = mod_name..Ignore.MODULE_PREFIX
+Ignore.IGNORED_PLAYERS_TABLE_NAME_SUFFIX = "IgnoredPlayers"
+Ignore.IGNORED_PLAYERS_TABLE_NAME = Ignore.TABLE_PREFIX..Ignore.IGNORED_PLAYERS_TABLE_NAME_SUFFIX

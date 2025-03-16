@@ -1,2 +1,62 @@
+VERSION = 1,
 
+option SimpleLeaderboard.LeaderboardSize
+{
+    type = integer,
+    default = 100,
+    min = 1,
+    max = 300,
+    page = SimpleLeaderboard,
+    translation = SimpleLeaderboardLeaderboardSize
+}
+
+option SimpleLeaderboard.MaxDataRequestInterval
+{
+    type = integer,
+    default = 1,
+    min = 0,
+    max = 24,
+    page = SimpleLeaderboard,
+    translation = SimpleLeaderboardMaxDataRequestInterval
+}
+
+option SimpleLeaderboard.DataBroadcastInterval
+{
+    type = integer,
+    default = 4,
+    min = 1,
+    max = 24,
+    page = SimpleLeaderboard,
+    translation = SimpleLeaderboardDataBroadcastInterval
+}
+
+option SimpleLeaderboard.DataIntakeInterval
+{
+    type = integer,
+    default = 4,
+    min = 1,
+    max = 24,
+    page = SimpleLeaderboard,
+    translation = SimpleLeaderboardDataIntakeInterval
+}
+
+option SimpleLeaderboard.ArchiveSweepInterval
+{
+    type = integer,
+    default = 24,
+    min = 1,
+    max = 72,
+    page = SimpleLeaderboard,
+    translation = SimpleLeaderboardArchiveSweepInterval
+}
+
+option SimpleLeaderboard.ArchiveInactivityThreshold
+{
+    type = integer,
+    default = 7,
+    min = 1,
+    max = 30,
+    page = SimpleLeaderboard,
+    translation = SimpleLeaderboardArchiveInactivityThreshold
+}
 
