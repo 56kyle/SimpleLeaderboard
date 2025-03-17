@@ -1,5 +1,7 @@
 
+print("SimpleLeaderboard - Shared - Settings - Top")
 if not SimpleLeaderboard then return end
+print("SimpleLeaderboard - Shared - Settings - Loading")
 
 local Settings = SimpleLeaderboard.Settings
 
@@ -11,3 +13,4 @@ Settings.archive_sweep_interval = SandboxOptions.SimpleLeaderboard.player_archiv
 Settings.archive_inactivity_threshold = SandboxOptions.SimpleLeaderboard.archive_inactivity_threshold
 
 
+return Settings

@@ -1,4 +1,7 @@
+
+print("SimpleLeaderboard - Shared - Archive - Top")
 if not SimpleLeaderboard then return end
+print("SimpleLeaderboard - Shared - Archive - Loading")
 
 local Archive = SimpleLeaderboard.Archive
 
@@ -16,3 +19,4 @@ Archive.ARCHIVED_PLAYERS_TABLE_NAME = Archive.TABLE_PREFIX..Archive.ARCHIVED_PLA
 Archive.LAST_SEEN_TABLE_SUFFIX = "LastSeen"
 Archive.LAST_SEEN_TABLE_NAME = Archive.TABLE_PREFIX..Archive.LAST_SEEN_TABLE_SUFFIX
 
+return Archive

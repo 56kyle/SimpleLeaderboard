@@ -1,5 +1,7 @@
 
+print("SimpleLeaderboard - Shared - Leaderboard - Top")
 if not SimpleLeaderboard then return end
+print("SimpleLeaderboard - Shared - Leaderboard - Loading")
 
 local Leaderboard = SimpleLeaderboard.Leaderboard
 
@@ -53,18 +55,5 @@ function Leaderboard:isLeader(username)
     return self.leaders_table.exists(username)
 end
 
---
------@private
------@return fun(key: string, data: table|false)
---function Leaderboard:getUpdateRecordCallback()
---    ---@private
---    ---@param key string
---    ---@param data table|false
---    ---@return nil
---    local function updateLeadersOnRecordChange(key, data)
---        if key:find(self.) then
---
---        end
---
---    end
---end
+
+return Leaderboard

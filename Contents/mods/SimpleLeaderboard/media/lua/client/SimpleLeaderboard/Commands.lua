@@ -1,7 +1,9 @@
 
+print("SimpleLeaderboard - Client - Commands - Top")
 if not isClient() then return end
 if not SimpleLeaderboard then return end
 if not SimpleLeaderboard.Client then return end
+print("SimpleLeaderboard - Client - Commands - Loading")
 
 local ClientCommands = SimpleLeaderboard.Client.Commands
 
@@ -35,3 +37,5 @@ end
 
 
 Events.OnClientCommand.Add(onClientCommand)
+
+return ClientCommands

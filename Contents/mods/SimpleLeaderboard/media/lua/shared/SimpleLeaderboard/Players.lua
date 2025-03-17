@@ -1,5 +1,7 @@
 
+print("SimpleLeaderboard - Shared - Players - Top")
 if not SimpleLeaderboard then return end
+print("SimpleLeaderboard - Shared - Players - Loading")
 
 local Players = SimpleLeaderboard.Players
 
@@ -13,6 +15,6 @@ Players.TABLE_PREFIX = mod_name..Players.MODULE_PREFIX
 Players.ALL_TABLE_SUFFIX = "All"
 Players.ALL_TABLE_NAME = Players.TABLE_PREFIX..Players.ALL_TABLE_SUFFIX
 
-Players.all = ModData.getOrCreate(Players.ALL_TABLE_NAME)
 
 
+return Players

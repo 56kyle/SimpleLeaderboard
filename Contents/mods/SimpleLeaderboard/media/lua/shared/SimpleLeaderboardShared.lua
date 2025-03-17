@@ -1,4 +1,5 @@
 
+print("SimpleLeaderboard - Shared - Main - Top")
 SimpleLeaderboard = SimpleLeaderboard or {
     Client = {
         Commands = {},
@@ -25,9 +26,13 @@ SimpleLeaderboard = SimpleLeaderboard or {
     MOD_NAME = "SimpleLeaderboard",
 }
 
+SimpleLeaderboard.Settings = require("SimpleLeaderboard/Settings")
+SimpleLeaderboard.Util = require("SimpleLeaderboard/Util")
+SimpleLeaderboard.Players = require("SimpleLeaderboard/Players")
+SimpleLeaderboard.Archive = require("SimpleLeaderboard/Archive")
+SimpleLeaderboard.Ignore = require("SimpleLeaderboard/Ignore")
+SimpleLeaderboard.Leaderboard = require("SimpleLeaderboard/Leaderboard")
 
-require "SimpleLeaderboard/Archive"
-require "SimpleLeaderboard/Ignore"
-require "SimpleLeaderboard/Settings"
-require "SimpleLeaderboard/Leaderboard"
-require "SimpleLeaderboard/Util"
+print("SimpleLeaderboard - Shared - Main - Done Loading")
+
+return SimpleLeaderboard

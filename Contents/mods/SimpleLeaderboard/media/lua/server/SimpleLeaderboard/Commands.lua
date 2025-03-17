@@ -1,7 +1,9 @@
 
+print("SimpleLeaderboard - Server - Commands - Top")
 if not isServer() then return end
 if not SimpleLeaderboard then return end
 if not SimpleLeaderboard.Server then return end
+print("SimpleLeaderboard - Server - Commands - Loading")
 
 SimpleLeaderboard.Server.Commands = SimpleLeaderboard.Commands
 local ServerCommands = SimpleLeaderboard.Server.Commands
@@ -27,3 +29,5 @@ end
 
 
 Events.OnServerCommand.Add(onServerCommand)
+
+return ServerCommands
