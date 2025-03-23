@@ -7,7 +7,7 @@ option SimpleLeaderboard.LeaderboardSize
     min = 1,
     max = 300,
     page = SimpleLeaderboard,
-    translation = SimpleLeaderboardLeaderboardSize
+    translation = SimpleLeaderboardLeaderboardSize,
 }
 
 option SimpleLeaderboard.MaxDataRequestInterval
@@ -17,7 +17,7 @@ option SimpleLeaderboard.MaxDataRequestInterval
     min = 0,
     max = 24,
     page = SimpleLeaderboard,
-    translation = SimpleLeaderboardMaxDataRequestInterval
+    translation = SimpleLeaderboardMaxDataRequestInterval,
 }
 
 option SimpleLeaderboard.DataBroadcastInterval
@@ -27,7 +27,7 @@ option SimpleLeaderboard.DataBroadcastInterval
     min = 1,
     max = 24,
     page = SimpleLeaderboard,
-    translation = SimpleLeaderboardDataBroadcastInterval
+    translation = SimpleLeaderboardDataBroadcastInterval,
 }
 
 option SimpleLeaderboard.DataIntakeInterval
@@ -37,7 +37,7 @@ option SimpleLeaderboard.DataIntakeInterval
     min = 1,
     max = 24,
     page = SimpleLeaderboard,
-    translation = SimpleLeaderboardDataIntakeInterval
+    translation = SimpleLeaderboardDataIntakeInterval,
 }
 
 option SimpleLeaderboard.ArchiveSweepInterval
@@ -47,7 +47,7 @@ option SimpleLeaderboard.ArchiveSweepInterval
     min = 1,
     max = 72,
     page = SimpleLeaderboard,
-    translation = SimpleLeaderboardArchiveSweepInterval
+    translation = SimpleLeaderboardArchiveSweepInterval,
 }
 
 option SimpleLeaderboard.ArchiveInactivityThreshold
@@ -57,6 +57,6 @@ option SimpleLeaderboard.ArchiveInactivityThreshold
     min = 1,
     max = 30,
     page = SimpleLeaderboard,
-    translation = SimpleLeaderboardArchiveInactivityThreshold
+    translation = SimpleLeaderboardArchiveInactivityThreshold,
 }
 

@@ -1,15 +1,17 @@
 
 print("SimpleLeaderboard - Server - Players - Top")
 if not isServer() then return end
-if not SimpleLeaderboard then return end
-if not SimpleLeaderboard.Server then return end
 print("SimpleLeaderboard - Server - Players - Loading")
 
+local Players = SimpleLeaderboard.Players
 
-SimpleLeaderboard.Server.Players = SimpleLeaderboard.Players
-local ServerPlayers = SimpleLeaderboard.Players
+-----@public
+-----@param newGame boolean
+-----@return nil
+function Players.registerModData(newGame)
+    Players.all_players = ModData.getOrCreate(Players.ALL_PLAYERS_TABLE_NAME)
+end
 
+Events.OnInitGlobalModData.Add(Players.registerModData)
 
-ServerPlayers.all_players = ModData.getOrCreate(ServerPlayers.ALL_PLAYERS_TABLE_NAME)
-
-return ServerPlayers
+return Players
