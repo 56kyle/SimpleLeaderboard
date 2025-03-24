@@ -1,12 +1,10 @@
 
 print("SimpleLeaderboard - Shared - Main - Top")
 SimpleLeaderboard = SimpleLeaderboard or {
-    Client = {},
     Commands = {},
     Constants = {},
     Leaderboard = {},
     Players = {},
-    Server = {},
     Settings = {},
     Util = {},
 }
