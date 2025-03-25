@@ -50,4 +50,11 @@ function Util.shallowPrint(obj)
 end
 
 
+function Util.truncateArray(arr, maxSize)
+    if not maxSize or maxSize <= 0 then return end
+    while #arr > maxSize do
+        table.remove(arr)
+    end
+end
+
 return Util

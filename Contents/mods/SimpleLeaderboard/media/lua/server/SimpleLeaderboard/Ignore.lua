@@ -14,9 +14,29 @@ Ignore.IGNORED_PLAYERS_TABLE_NAME = Ignore.TABLE_PREFIX..Ignore.IGNORED_PLAYERS_
 
 ---@public
 ---@param steam_id long
+---@return boolean
+function Ignore.isIgnored(steam_id)
+    return Ignore.ignored_players[steam_id] == true
+end
+
+---@public
+---@param steam_id long
 ---@return nil
-function Ignore.IgnorePlayerBySteamID(steam_id)
-    Ignore.ignored_players:insert(steam_id)
+function Ignore.ignorePlayer(steam_id)
+    if not Ignore.ignored_players[steam_id] then
+        Ignore.ignored_players[steam_id] = true
+    end
+    ModData:transmit(Ignore.IGNORED_PLAYERS_TABLE_NAME)
+end
+
+---@public
+---@param steam_id long
+---@return nil
+function Ignore.unIgnorePlayer(steam_id)
+    if Ignore.ignored_players[steam_id] then
+        Ignore.ignored_players[steam_id] = nil
+    end
+    ModData:transmit(Ignore.IGNORED_PLAYERS_TABLE_NAME)
 end
 
 ---@public
@@ -25,5 +45,6 @@ end
 function Ignore.registerModData(newGame)
     Ignore.ignored_players = ModData.getOrCreate(Ignore.IGNORED_PLAYERS_TABLE_NAME)
 end
+Events.OnInitGlobalModData.Add(Ignore.registerModData)
 
 return Ignore

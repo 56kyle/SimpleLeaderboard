@@ -1,9 +1,9 @@
 -- media/lua/client/SimpleLeaderboard/UI/ISPlayerFactionToggle.lua
 
-require("ISUI/ISPanel")
+require "ISUI/ISPanel"
 
 ---@class ISPlayerFactionToggle : ISPanel
-local ISPlayerFactionToggle = ISPanel:derive("ISPlayerFactionToggle")
+ISPlayerFactionToggle = ISPanel:derive("ISPlayerFactionToggle")
 
 function ISPlayerFactionToggle:new(x, y, width, height, initialIsFaction, onToggle)
     local o = ISPanel.new(self, x, y, width, height)
@@ -49,5 +49,3 @@ function ISPlayerFactionToggle:onMouseUp(x, y)
     end
     return true
 end
-
-return ISPlayerFactionToggle
