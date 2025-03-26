@@ -15,6 +15,7 @@ Players.TABLE_PREFIX = mod_name..Players.MODULE_PREFIX
 Players.ALL_PLAYERS_TABLE_SUFFIX = "AllPlayers"
 Players.ALL_PLAYERS_TABLE_NAME = Players.TABLE_PREFIX..Players.ALL_PLAYERS_TABLE_SUFFIX
 
+
 ---@public
 ---@param newGame boolean
 ---@return nil

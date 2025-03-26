@@ -1,6 +1,9 @@
 -- media/lua/client/SimpleLeaderboard/UI/ISLeaderboardWindow.lua
 
+require "ISUI/ISComboBox"
+require "ISUI/ISLabel"
 require "ISUI/ISWindow"
+
 require "SimpleLeaderboard/UI/ISPlayerFactionToggle"
 
 ---@class ISSimpleLeaderboardWindow : ISWindow
@@ -42,9 +45,27 @@ function ISSimpleLeaderboardWindow:initialise()
 end
 
 function ISSimpleLeaderboardWindow:createChildren()
-    for leaderboard in
-end
+    ISWindow.createChildren(self)
 
+    -- #1 Faction toggle inside scoreboard
+    self.factionToggle = ISPlayerFactionToggle:new(10, 10, 100, 25, self.isFaction, function(newVal)
+        self.isFaction = newVal
+        self:requestCurrentLeaderboard()
+    end)
+    self.factionToggle:initialise()
+    self.factionToggle:instantiate()
+    self:addChild(self.factionToggle)
+
+    -- #2 Leaderboard combo box
+    self.comboBox = ISComboBox:new(10, 50, self.width - 20, 20, self, ISSimpleLeaderboardWindow.onComboBoxChange)
+    self.comboBox:initialise()
+    self:addChild(self.comboBox)
+
+    -- #3 Panel for scoreboard entries
+    self.outputPanel = ISPanel:new(10, 80, self.width - 20, self.height - 90)
+    self.outputPanel:initialise()
+    self:addChild(self.outputPanel)
+end
 
 
 function ISSimpleLeaderboardWindow:onComboBoxChange(combo)

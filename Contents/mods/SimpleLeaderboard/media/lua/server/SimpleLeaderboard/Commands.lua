@@ -14,7 +14,7 @@ local mod_name = SimpleLeaderboard.Constants.MOD_NAME
 ---@return nil
 function Commands.printLeaderboard(player, args)
     print("Commands.printLeaderboard")
-    for k, v in pairs(Leaderboard.leaders_table) do
+    for k, v in pairs(Leaderboard.player_leaders_table) do
         print("\t"..k.." - "..v)
     end
 end
