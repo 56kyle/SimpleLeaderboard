@@ -1,7 +1,6 @@
 
 print("SimpleLeaderboard - Shared - Main - Top")
 SimpleLeaderboard = SimpleLeaderboard or {
-    Commands = {},
     Constants = {},
     Factions = {},
     Leaderboard = {},

@@ -43,8 +43,8 @@ end
 ---@param newGame boolean
 ---@return nil
 function Ignore.registerModData(newGame)
-    Ignore.ignored_players = ModData.getOrCreate(Ignore.IGNORED_PLAYERS_TABLE_NAME)
+    Ignore.ignored_players = ModData:getOrCreate(Ignore.IGNORED_PLAYERS_TABLE_NAME)
 end
-Events.OnInitGlobalModData.Add(Ignore.registerModData)
+Events.OnInitGlobalModData:Add(Ignore.registerModData)
 
 return Ignore

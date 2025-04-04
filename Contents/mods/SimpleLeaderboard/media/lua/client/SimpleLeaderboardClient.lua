@@ -1,32 +1,24 @@
 -- media/lua/client/SimpleLeaderboard/SimpleLeaderboardClient.lua
+local Constants = SimpleLeaderboard.Constants
+local MOD_NAME = Constants.MOD_NAME
 
 local SimpleLeaderboardClientUI = require("SimpleLeaderboard/ClientUI")
+local Commands = require("SimpleLeaderboard/Commands")
 
 local SimpleLeaderboardClient = {}
 local leaderboardWindow = SimpleLeaderboardClientUI.getLeaderboardWindow()
 
-function SimpleLeaderboardClient.requestLeaderboardList()
-    sendClientCommand("SimpleLeaderboard", "RequestLeaderboardList", {})
-end
-
-function SimpleLeaderboardClient.debugCheck()
-    sendClientCommand("SimpleLeaderboard", "DebugCheck", {})
-end
 
 local function onServerCommand(module, command, args)
-    if module ~= "SimpleLeaderboard" then return end
-
-    if command == "SendLeaderboardList" then
-        local boards = args.board_names or {}
-        leaderboardWindow:updateLeaderboardList(boards)
-
-    elseif command == "SendLeaderboardData" then
-        local lbName = args.leaderboard_name
-        local data = args.leaderboard_data
-        leaderboardWindow:updateLeaderboardData(lbName, data)
-
-    elseif command == "DebugResponse" then
-        print("Server says: " .. (args.message or "No message"))
+    if module ~= MOD_NAME then return end
+    local callback = Commands[command]
+    local player = getPlayer()
+    local playerName = player:getUsername()
+    if callback then
+        print("[".. MOD_NAME .."] Running command \""..command.."\" for player \""..playerName.."\".")
+        callback(args)
+    else
+        print("[".. MOD_NAME .."] Unknown command \""..command.."\" sent to player \""..playerName.."\"!")
     end
 end
 Events.OnServerCommand.Add(onServerCommand)

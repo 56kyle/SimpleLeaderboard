@@ -39,7 +39,8 @@ end
 function ISLeaderboardToggle:initialise()
     self:setImage(textureOff)
     self:setDisplayBackground(false)
-
+    self:setVisible(true)
+    self:setAlwaysOnTop(true)
     ISEquippedItem.instance:addChild(self)
     ISEquippedItem.instance:setHeight(math.max(ISEquippedItem.instance:getHeight(), self:getY() + 400))
 end

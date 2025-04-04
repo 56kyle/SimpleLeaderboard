@@ -5,8 +5,8 @@ Sandbox_EN = {
     Sandbox_SimpleLeaderboardLeaderboardSize = "LeaderboardSize",
     Sandbox_SimpleLeaderboardLeaderboardSize_tooltip = "LeaderboardSize_tooltip",
 
-    Sandbox_SimpleLeaderboardMaxDataRequestInterval = "MaxDataRequestInterval",
-    Sandbox_SimpleLeaderboardMaxDataRequestInterval_tooltip = "MaxDataRequestInterval_tooltip",
+    Sandbox_SimpleLeaderboardClientMaxRequestInterval = "ClientMaxRequestInterval",
+    Sandbox_SimpleLeaderboardClientMaxRequestInterval_tooltip = "ClientMaxRequestInterval_tooltip",
 
     Sandbox_SimpleLeaderboardDataBroadcastInterval = "DataBroadcastInterval",
     Sandbox_SimpleLeaderboardDataBroadcastInterval_tooltip = "DataBroadcastInterval_tooltip",

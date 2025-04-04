@@ -28,8 +28,6 @@ local function createToggleButton()
     end)
     toggleButton:initialise()
     toggleButton:instantiate()
-    toggleButton:setVisible(true)
-    toggleButton:setAlwaysOnTop(true)
     UIManager.addUI(toggleButton)
 end
 
