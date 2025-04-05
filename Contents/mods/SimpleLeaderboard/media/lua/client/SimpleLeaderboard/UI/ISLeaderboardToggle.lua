@@ -10,6 +10,8 @@ ISLeaderboardToggle = ISButton:derive("ISLeaderboardToggle")
 local textureOff = getTexture("media/textures/ranking_off.png")
 local textureOn  = getTexture("media/textures/ranking_on.png")
 
+---@class Test
+
 ---@public
 ---@param onmousedown function
 ---@param allowMouseUpProcessing boolean

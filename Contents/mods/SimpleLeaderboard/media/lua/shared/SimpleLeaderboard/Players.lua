@@ -1,11 +1,6 @@
-
-
-
 ---@alias PlayerRecord any
 
 ---@alias PlayerRecordsTable table<SteamID, PlayerRecord>
-
-
 
 
 print("SimpleLeaderboard - Shared - Players - Loading")

@@ -1,6 +1,12 @@
 
 print("SimpleLeaderboard - Shared - Util - Loading")
 
+---@module SimpleLeaderboard.Util
+---@field secondsToHours fun(seconds: long): number
+---@field inKeys fun(obj: table, key: any): boolean
+---@field inValues fun(obj: table, value: any): boolean
+---@field shallowPrint fun(obj: table): nil
+---@field truncateArray fun(arr: table, maxSize: number): nil
 local Util = {}
 
 
@@ -50,6 +56,10 @@ function Util.shallowPrint(obj)
 end
 
 
+---@public
+---@param arr table
+---@param maxSize number
+---@return nil
 function Util.truncateArray(arr, maxSize)
     if not maxSize or maxSize <= 0 then return end
     while #arr > maxSize do

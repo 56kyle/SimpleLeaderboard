@@ -6,7 +6,6 @@ local SimpleLeaderboardClientUI = require("SimpleLeaderboard/ClientUI")
 local Commands = require("SimpleLeaderboard/Commands")
 
 local SimpleLeaderboardClient = {}
-local leaderboardWindow = SimpleLeaderboardClientUI.getLeaderboardWindow()
 
 
 local function onServerCommand(module, command, args)
@@ -27,7 +26,6 @@ local function onGameStart()
     SimpleLeaderboardClient.requestLeaderboardList()
 end
 Events.OnGameStart.Add(onGameStart)
-
 
 local function onCreatePlayer()
     SimpleLeaderboardClientUI.addToolbarButton()

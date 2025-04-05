@@ -1,5 +1,13 @@
 
 print("SimpleLeaderboard - Shared - Main - Top")
+
+---@module SimpleLeaderboard
+---@field Constants SimpleLeaderboard.Constants
+---@field Factions SimpleLeaderboard.Factions
+---@field Leaderboard SimpleLeaderboard.Leaderboard
+---@field Players SimpleLeaderboard.Players
+---@field Settings SimpleLeaderboard.Settings
+---@field Util SimpleLeaderboard.Util
 SimpleLeaderboard = SimpleLeaderboard or {
     Constants = {},
     Factions = {},

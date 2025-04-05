@@ -7,8 +7,31 @@ print("SimpleLeaderboard - Client - Commands - Loading")
 local Commands = {}
 
 
+---@public
+---@param player IsoPlayer
+---@param args any[]
+function Commands.syncClientLeaderboardFactionLeaders(player, args)
+    print("Commands.syncClientLeaderboardFactionLeaders")
+    local leaderboardID = args[1]
+    if not leaderboardID then
+        print("[".. SimpleLeaderboard.Constants.MOD_NAME .."] No leaderboardID provided.")
+        return
+    end
+end
+
+
+---@public
+---@param player IsoPlayer
+---@param args any[]
+function Commands.syncClientLeaderboardPlayerLeaders(player, args)
+    print("Commands.syncClientLeaderboardPlayerLeaders")
+    local leaderboardID = args[1]
+    if not leaderboardID then
+        print("[".. SimpleLeaderboard.Constants.MOD_NAME .."] No leaderboardID provided.")
+        return
+    end
+end
 
 
 
 return Commands
-

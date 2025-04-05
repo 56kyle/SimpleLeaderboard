@@ -14,15 +14,15 @@
 ---@alias SteamID string
 ---@alias LeaderboardID string
 
----@module SimpleLeaderboard.Leaderboard
 print("SimpleLeaderboard - Shared - Leaderboard - Loading")
+
+---@generic T
+---@alias PlayerLeadersTable table<SteamID, PlayerRecord<T>>
 
 ---@generic T
 ---@class FactionLeadersTable
 ---@field public players PlayerRecordsTable
 ---@field public record T
-
-
 
 ---@generic T
 ---@class Leaderboard<T>
@@ -39,8 +39,8 @@ print("SimpleLeaderboard - Shared - Leaderboard - Loading")
 ---@field public PLAYER_RECORDS_TABLE_NAME string
 ---@field public FACTION_LEADERS_TABLE_NAME string
 ---@field public FACTION_RECORDS_TABLE_NAME string
----@field public registered_leaderboards table<LeaderboardID, Leaderboard<T>>
----@field public player_leaders_table PlayerLeadersTable
+---@field public registered_leaderboards table<LeaderboardID, Leaderboard<any>>
+---@field public player_leaders_table PlayerLeadersTable<T>
 ---@field public faction_leaders_table FactionLeadersTable
 local Leaderboard = {}
 
@@ -117,7 +117,6 @@ function Leaderboard:register()
     --- Please do not manually call this function, use Leaderboard:setup() instead
     table.insert(Leaderboard.registered_leaderboards, self)
 end
-
 
 ---@public
 ---@generic T

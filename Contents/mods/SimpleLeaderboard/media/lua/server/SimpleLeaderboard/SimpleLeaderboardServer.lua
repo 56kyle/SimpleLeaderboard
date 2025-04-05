@@ -1,8 +1,6 @@
 --- SimpleLeaderboard Server
 
 local Constants = SimpleLeaderboard.Constants
-local SimpleLeaderboardShared = require("SimpleLeaderboard/SimpleLeaderboardShared")
-local SimpleLeaderboardIgnore = require("SimpleLeaderboard/SimpleLeaderboardIgnore")
 local Util = SimpleLeaderboard.Util
 
 ---@module SimpleLeaderboardServer

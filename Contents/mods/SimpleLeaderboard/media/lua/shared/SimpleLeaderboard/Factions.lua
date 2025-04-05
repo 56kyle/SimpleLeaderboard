@@ -15,6 +15,8 @@
 ---@field public initialValue T
 ---@field public currentValue T
 
+
+
 ---@module SimpleLeaderboard.Factions
 ---@generic T
 ---@field public MODULE_PREFIX string
