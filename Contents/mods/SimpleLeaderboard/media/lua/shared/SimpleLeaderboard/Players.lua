@@ -4,7 +4,6 @@
 
 
 print("SimpleLeaderboard - Shared - Players - Loading")
----@module SimpleLeaderboard.Players
 local Players = {}
 
 local Constants = require("SimpleLeaderboard/Constants")

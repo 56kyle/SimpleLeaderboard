@@ -51,6 +51,8 @@ local Settings = require("SimpleLeaderboard/Settings")
 
 local Factions = require("SimpleLeaderboard/Factions")
 
+local Players = require("SimpleLeaderboard/Players")
+
 Leaderboard.REGISTERED_LEADERBOARDS_TABLE_SUFFIX = "RegisteredLeaderboards"
 Leaderboard.REGISTERED_LEADERBOARDS_TABLE_NAME = mod_name..Leaderboard.REGISTERED_LEADERBOARDS_TABLE_SUFFIX
 
@@ -166,7 +168,7 @@ end
 function Leaderboard:calculateFactionRecord(faction)
     local factionID = Faction:getName()
     local factionRecords = Factions.getLeaderboardFactionRecord(self.ID, factionID)
-    totalValue = 0
+    local totalValue = 0
     for _, playerRecord in pairs(factionRecords.players) do
         totalValue = totalValue + playerRecord.currentValue
     end
