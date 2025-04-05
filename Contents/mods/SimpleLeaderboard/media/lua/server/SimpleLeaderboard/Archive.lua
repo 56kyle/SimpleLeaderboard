@@ -9,7 +9,8 @@ local Archive = {}
 local Leaderboard = SimpleLeaderboard.Leaderboard
 local Settings = SimpleLeaderboard.Settings
 local Util = SimpleLeaderboard.Util
-
+local Constants = SimpleLeaderboard.Constants
+local mod_name = Constants.MOD_NAME
 
 Archive.MODULE_PREFIX = "Archive"
 Archive.TABLE_PREFIX = mod_name..Archive.MODULE_PREFIX

@@ -42,16 +42,5 @@ function API.requestLeaderboardPlayerLeaders(leaderboardID)
     ModData:request(leaderboard.PLAYER_LEADERS_TABLE_NAME)
 end
 
-
----@public
----@generic T
----@param leaderboardID LeaderboardID
----@return nil
-function API.sendLeaderboardPlayer
-
-
-
-
-
 return API
 

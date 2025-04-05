@@ -33,6 +33,22 @@ function Commands.printLeaderboard(player, args)
 end
 
 
+---@public
+---@param
+---@param args table
+---@return nil
+function Commands.listLeaderboards(player, args)
+    print("Commands.listLeaderboards")
+    for leaderboardID, _ in pairs(Leaderboard.registered_leaderboards) do
+        print("\t"..leaderboardID)
+    end
+    player:
+end
+
+
+---@public
+---@param
+
 
 
 

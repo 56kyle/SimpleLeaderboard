@@ -42,6 +42,8 @@ print("SimpleLeaderboard - Shared - Leaderboard - Loading")
 ---@field public registered_leaderboards table<LeaderboardID, Leaderboard<any>>
 ---@field public player_leaders_table PlayerLeadersTable<T>
 ---@field public faction_leaders_table FactionLeadersTable
+
+---@class SimpleLeaderboard.Leaderboard : Leaderboard
 local Leaderboard = {}
 
 local Constants = require("SimpleLeaderboard/Constants")
@@ -79,7 +81,6 @@ function Leaderboard.getLeaderboard(leaderboardID)
     end
     return leaderboard
 end
-
 
 ---@public
 ---@param leaderboardID LeaderboardID

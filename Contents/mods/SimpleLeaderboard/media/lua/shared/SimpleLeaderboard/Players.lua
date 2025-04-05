@@ -1,6 +1,6 @@
----@alias PlayerRecord any
 
----@alias PlayerRecordsTable table<SteamID, PlayerRecord>
+---@alias PlayerRecord any
+---@alias PlayerRecordsTable table<LeaderboardID, PlayerRecord>
 
 
 print("SimpleLeaderboard - Shared - Players - Loading")
@@ -26,27 +26,37 @@ Players.TABLE_PREFIX = mod_name..Players.MODULE_PREFIX
 Players.RECORDS_TABLE_SUFFIX = "Records"
 Players.RECORDS_TABLE_NAME = Players.TABLE_PREFIX..Players.RECORDS_TABLE_SUFFIX
 
+
 ---@public
 ---@generic T
 ---@param steamID SteamID
----@param leaderboardID LeaderboardID
----@return T
-function Players.getPlayerLeaderboardRecord(steamID, leaderboardID)
+---@return PlayerRecord
+function Players.getPlayerRecord(steamID)
     local playerRecords = Players.records[steamID]
     if not playerRecords then
         playerRecords = {}
         Players.records[steamID] = playerRecords
     end
-    local playerLeaderboardRecords = playerRecords[leaderboardID]
-    if not playerLeaderboardRecords then
-        playerLeaderboardRecords = {}
-        playerRecords[leaderboardID] = playerLeaderboardRecords
-    end
+    return playerRecords
 end
 
+---@public
+---@generic T
+---@param steamID SteamID
+---@param leaderboardID LeaderboardID
+---@return T | nil
+function Players.getPlayerLeaderboardRecord(steamID, leaderboardID)
+    local playerRecords = Players.getPlayerRecord(steamID)
+    return playerRecords[leaderboardID]
+end
 
+---@public
+---@generic T
+---@param steamID SteamID
+---@param leaderboardID LeaderboardID
+---@return nil
 function Players.setPlayerLeaderboardRecord(steamID, leaderboardID, value)
-    local playerRecords = Players
+    local playerRecords = Players.records[steamID]
     playerRecords[leaderboardID] = value
 end
 
