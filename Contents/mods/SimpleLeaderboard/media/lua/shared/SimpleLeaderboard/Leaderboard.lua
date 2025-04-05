@@ -69,18 +69,6 @@ Leaderboard.FACTION_RECORDS_TABLE_NAME_SUFFIX = "FactionRecords"
 Leaderboard.registered_leaderboards = Leaderboard.registered_leaderboards or {}
 
 ---@public
----@param leaderboardID LeaderboardID
----@return Leaderboard
-function Leaderboard:derive(leaderboardID)
-    --- Usage should be MyLeaderboard = Leaderboard:derive("MyLeaderboard")
-    local o = {}
-    setmetatable(o, self)
-    self.__index = self
-    o.ID = leaderboardID
-    return o
-end
-
----@public
 ---@generic T
 ---@param leaderboardID string
 ---@return Leaderboard<T>
@@ -90,6 +78,19 @@ function Leaderboard.getLeaderboard(leaderboardID)
         error("SimpleLeaderboard: Attempted to get a leaderboard that does not exist: "..leaderboardID)
     end
     return leaderboard
+end
+
+
+---@public
+---@param leaderboardID LeaderboardID
+---@return Leaderboard
+function Leaderboard:derive(leaderboardID)
+    --- Usage should be MyLeaderboard = Leaderboard:derive("MyLeaderboard")
+    local o = {}
+    setmetatable(o, self)
+    self.__index = self
+    o.ID = leaderboardID
+    return o
 end
 
 ---@public

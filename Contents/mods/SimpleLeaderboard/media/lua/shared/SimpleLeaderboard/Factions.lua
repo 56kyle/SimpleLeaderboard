@@ -17,7 +17,7 @@
 
 
 
----@module SimpleLeaderboard.Factions
+---@class SimpleLeaderboard.Factions
 ---@generic T
 ---@field public MODULE_PREFIX string
 ---@field public TABLE_PREFIX string

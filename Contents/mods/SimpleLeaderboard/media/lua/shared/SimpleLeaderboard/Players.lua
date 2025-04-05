@@ -4,6 +4,17 @@
 
 
 print("SimpleLeaderboard - Shared - Players - Loading")
+
+
+---@class SimpleLeaderboard.Players
+---@field MODULE_PREFIX string
+---@field TABLE_PREFIX string
+---@field RECORDS_TABLE_SUFFIX string
+---@field RECORDS_TABLE_NAME string
+---@field records table<SteamID, PlayerRecordsTable>
+---@field getPlayerLeaderboardRecord fun(steamID: SteamID, leaderboardID: LeaderboardID): PlayerRecord
+---@field setPlayerLeaderboardRecord fun(steamID: SteamID, leaderboardID: LeaderboardID, value: any): void
+---@field registerModData fun(newGame: boolean): nil
 local Players = {}
 
 local Constants = require("SimpleLeaderboard/Constants")

@@ -3,7 +3,7 @@
 local Constants = SimpleLeaderboard.Constants
 local Util = SimpleLeaderboard.Util
 
----@module SimpleLeaderboardServer
+---@class SimpleLeaderboardServer
 local SimpleLeaderboardServer = {}
 
 

@@ -1,6 +1,6 @@
 --- Custom generic EmmyLua types for SimpleLeaderboard
 
----@module SimpleLeaderboard.CustomTyping
+---@class SimpleLeaderboard.CustomTyping
 local CustomTyping = {}
 
 -- Real Time Units

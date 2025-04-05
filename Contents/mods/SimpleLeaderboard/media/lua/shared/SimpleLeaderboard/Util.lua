@@ -1,7 +1,7 @@
 
 print("SimpleLeaderboard - Shared - Util - Loading")
 
----@module SimpleLeaderboard.Util
+---@class SimpleLeaderboard.Util
 ---@field secondsToHours fun(seconds: long): number
 ---@field inKeys fun(obj: table, key: any): boolean
 ---@field inValues fun(obj: table, value: any): boolean

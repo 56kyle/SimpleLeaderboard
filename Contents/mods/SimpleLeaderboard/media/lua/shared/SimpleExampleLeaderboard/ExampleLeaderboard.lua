@@ -1,4 +1,4 @@
----@module SimpleExampleLeaderboard.ExampleLeaderboard
+---@class SimpleExampleLeaderboard.ExampleLeaderboard
 
 ---@type Leaderboard
 local Leaderboard = require("SimpleLeaderboard/Leaderboard")

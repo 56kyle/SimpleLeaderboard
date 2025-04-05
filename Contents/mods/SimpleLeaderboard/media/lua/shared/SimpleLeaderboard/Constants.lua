@@ -1,5 +1,5 @@
 
----@module SimpleLeaderboard.Constants
+---@class SimpleLeaderboard.Constants
 ---@field MOD_NAME string
 local Constants = {}
 

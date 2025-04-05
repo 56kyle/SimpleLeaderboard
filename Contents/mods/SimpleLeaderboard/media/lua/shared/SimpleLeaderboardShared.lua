@@ -1,7 +1,7 @@
 
 print("SimpleLeaderboard - Shared - Main - Top")
 
----@module SimpleLeaderboard
+---@class SimpleLeaderboard
 ---@field Constants SimpleLeaderboard.Constants
 ---@field Factions SimpleLeaderboard.Factions
 ---@field Leaderboard SimpleLeaderboard.Leaderboard

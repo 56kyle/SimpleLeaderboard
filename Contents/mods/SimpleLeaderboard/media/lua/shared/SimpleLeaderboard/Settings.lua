@@ -1,7 +1,7 @@
 
 print("SimpleLeaderboard - Shared - Settings - Loading")
 
----@module SimpleLeaderboard.Settings
+---@class SimpleLeaderboard.Settings
 ---@field defaultLeaderboard LeaderboardSettings
 ---@field getLeaderboardSettings fun(leaderboardID: LeaderboardID): LeaderboardSettings
 local Settings = {}
