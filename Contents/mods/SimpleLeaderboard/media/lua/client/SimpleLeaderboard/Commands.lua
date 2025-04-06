@@ -9,6 +9,23 @@ local Commands = {}
 local Constants = SimpleLeaderboard.Constants
 local MOD_NAME = Constants.MOD_NAME
 
+local Leaderboard = SimpleLeaderboard.Leaderboard
+
+
+local API = require("SimpleLeaderboard/API")
+
+
+---@public
+---@param player IsoPlayer
+---@param args table
+---@return nil
+function Commands.listLeaderboards(player, args)
+    print("Commands.listLeaderboards")
+    for leaderboardID, _ in pairs(Leaderboard.registered_leaderboards) do
+        print("\t" .. leaderboardID)
+    end
+end
+
 
 ---@public
 ---@param player IsoPlayer
@@ -20,6 +37,7 @@ function Commands.syncClientLeaderboardFactionLeaders(player, args)
         print("[".. MOD_NAME .."] No leaderboardID provided.")
         return
     end
+    API.requestLeaderboardFactionLeaders(leaderboardID)
 end
 
 
@@ -33,8 +51,7 @@ function Commands.syncClientLeaderboardPlayerLeaders(player, args)
         print("[".. MOD_NAME .."] No leaderboardID provided.")
         return
     end
+    API.requestLeaderboardPlayerLeaders(leaderboardID)
 end
-
-
 
 return Commands

@@ -7,13 +7,11 @@ local API = {}
 
 ---@public
 ---@return nil
-function API.requestLeaderboardList()
-    local leaderboardList = Leaderboard.getLeaderboardList()
-    if not leaderboardList then
-        print("SimpleLeaderboard - API - requestLeaderboardList - Leaderboard list not found")
-        return
+function API.listLeaderboards()
+    print("SimpleLeaderboard - API - listLeaderboards")
+    for leaderboardID, _ in pairs(Leaderboard.registered_leaderboards) do
+        print("\t" .. leaderboardID)
     end
-    ModData:request(leaderboardList.TABLE_NAME)
 end
 
 ---@public

@@ -6,7 +6,8 @@ print("SimpleLeaderboard - Server - Commands - Loading")
 
 local Commands = SimpleLeaderboard.Commands
 local Leaderboard = SimpleLeaderboard.Leaderboard
-local mod_name = SimpleLeaderboard.Constants.MOD_NAME
+local Constants = SimpleLeaderboard.Constants
+local MOD_NAME = Constants.MOD_NAME
 
 ---@public
 ---@param player IsoPlayer
@@ -34,7 +35,7 @@ end
 
 
 ---@public
----@param
+---@param player IsoPlayer
 ---@param args table
 ---@return nil
 function Commands.listLeaderboards(player, args)
@@ -42,13 +43,33 @@ function Commands.listLeaderboards(player, args)
     for leaderboardID, _ in pairs(Leaderboard.registered_leaderboards) do
         print("\t"..leaderboardID)
     end
-    player:
 end
 
 
 ---@public
----@param
+---@param player IsoPlayer
+---@param args any[]
+function Commands.syncClientLeaderboardFactionLeaders(player, args)
+    print("Commands.syncClientLeaderboardFactionLeaders")
+    local leaderboardID = args[1]
+    if not leaderboardID then
+        print("[".. MOD_NAME .."] No leaderboardID provided.")
+        return
+    end
+end
 
+
+---@public
+---@param player IsoPlayer
+---@param args any[]
+function Commands.syncClientLeaderboardPlayerLeaders(player, args)
+    print("Commands.syncClientLeaderboardPlayerLeaders")
+    local leaderboardID = args[1]
+    if not leaderboardID then
+        print("[".. MOD_NAME .."] No leaderboardID provided.")
+        return
+    end
+end
 
 
 

@@ -55,9 +55,6 @@ local Factions = require("SimpleLeaderboard/Factions")
 
 local Players = require("SimpleLeaderboard/Players")
 
-Leaderboard.REGISTERED_LEADERBOARDS_TABLE_SUFFIX = "RegisteredLeaderboards"
-Leaderboard.REGISTERED_LEADERBOARDS_TABLE_NAME = mod_name..Leaderboard.REGISTERED_LEADERBOARDS_TABLE_SUFFIX
-
 Leaderboard.ID = "Base"
 Leaderboard.MODULE_PREFIX = "Leaderboard"
 
@@ -195,13 +192,5 @@ function Leaderboard:comparePlayerRecords(playerA, playerB)
     --- Compare two records, used to determine record sorting
     return playerA.record > playerB.record
 end
-
----@private
----@param newGame boolean
----@return nil
-local function onInitGlobalModData(newGame)
-    Leaderboard.registered_leaderboards = ModData:getOrCreate(Leaderboard.REGISTERED_LEADERBOARDS_TABLE_NAME)
-end
-Events.OnInitGlobalModData:Add(onInitGlobalModData)
 
 return Leaderboard

@@ -20,6 +20,7 @@ local toggleButton
 
 -- Fix references here
 local function createToggleButton()
+    print("[".. Constants.MOD_NAME .."] createToggleButton")
     toggleButton = ISLeaderboardToggle:new(10, 200, 50, 25, "", nil, function()
         leaderboardWindow:setVisible(not leaderboardWindow:isVisible())
         if leaderboardWindow:isVisible() then
@@ -32,10 +33,12 @@ local function createToggleButton()
 end
 
 function SimpleLeaderboardClientUI.getLeaderboardWindow()
+    print("[".. Constants.MOD_NAME .."] SimpleLeaderboardClientUI.getLeaderboardWindow")
     return leaderboardWindow
 end
 
 function SimpleLeaderboardClientUI.createToggleButton()
+    print("[".. Constants.MOD_NAME .."] SimpleLeaderboardClientUI.createToggleButton")
     createToggleButton()
 end
 
