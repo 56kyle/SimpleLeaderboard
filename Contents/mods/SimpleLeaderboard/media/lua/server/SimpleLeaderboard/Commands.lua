@@ -3,35 +3,12 @@ print("SimpleLeaderboard - Server - Commands - Top")
 if not isServer() then return end
 print("SimpleLeaderboard - Server - Commands - Loading")
 
-
-local Commands = SimpleLeaderboard.Commands
-local Leaderboard = SimpleLeaderboard.Leaderboard
 local Constants = SimpleLeaderboard.Constants
 local MOD_NAME = Constants.MOD_NAME
 
----@public
----@param player IsoPlayer
----@param leaderboardID LeaderboardID
----@return nil
-local function printLeaderboard(player, leaderboardID)
-    print("printLeaderboard")
-    for k, v in pairs(Leaderboard.records) do
-        print("\t"..k.." - "..v)
-    end
-end
-
----@public
----@param player IsoPlayer
----@param args table
----@return nil
-function Commands.printLeaderboard(player, args)
-    print("Commands.printLeaderboard")
-    if not args[1] then
-        print("No leaderboardID provided.")
-        return
-    end
-    printLeaderboard(player, args[1])
-end
+local Commands = SimpleLeaderboard.Commands
+local Leaderboard = SimpleLeaderboard.Leaderboard
+local pprint = require("pprint")
 
 
 ---@public
@@ -45,6 +22,24 @@ function Commands.listLeaderboards(player, args)
     end
 end
 
+---@public
+---@param player IsoPlayer
+---@param args table
+---@return nil
+function Commands.viewLeaderboard(player, args)
+    print("Commands.viewLeaderboard")
+    local leaderboardID = args[1]
+    if not leaderboardID then
+        print("No leaderboardID provided.")
+        return
+    end
+    local leaderboard = Leaderboard.getLeaderboard(leaderboardID)
+    if not leaderboard then
+        print("[".. MOD_NAME .."] Leaderboard not found: " .. leaderboardID)
+        return
+    end
+    pprint.pprint(leaderboard)
+end
 
 ---@public
 ---@param player IsoPlayer

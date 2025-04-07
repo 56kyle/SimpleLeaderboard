@@ -1,6 +1,9 @@
 
 print("SimpleLeaderboard - Shared - Util - Loading")
 
+
+local pprint = require("pprint")
+
 ---@class SimpleLeaderboard.Util
 ---@field secondsToHours fun(seconds: long): number
 ---@field inKeys fun(obj: table, key: any): boolean
@@ -50,9 +53,7 @@ end
 ---@param obj table
 ---@return nil
 function Util.shallowPrint(obj)
-    for k, v in pairs(obj) do
-        print(k.." - "..v)
-    end
+    pprint.pprint(obj, { maxlevel = 1 })
 end
 
 

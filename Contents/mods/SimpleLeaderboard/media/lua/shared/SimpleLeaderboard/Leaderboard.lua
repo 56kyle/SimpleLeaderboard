@@ -26,8 +26,6 @@ print("SimpleLeaderboard - Shared - Leaderboard - Loading")
 
 ---@generic T
 ---@class Leaderboard<T>
----@field public REGISTERED_LEADERBOARDS_TABLE_SUFFIX string
----@field public REGISTERED_LEADERBOARDS_TABLE_NAME string
 ---@field public ID LeaderboardID
 ---@field public MODULE_PREFIX string
 ---@field public TABLE_PREFIX string

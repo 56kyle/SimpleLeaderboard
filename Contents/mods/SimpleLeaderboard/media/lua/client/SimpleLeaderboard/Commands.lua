@@ -15,17 +15,6 @@ local Leaderboard = SimpleLeaderboard.Leaderboard
 local API = require("SimpleLeaderboard/API")
 
 
----@public
----@param player IsoPlayer
----@param args table
----@return nil
-function Commands.listLeaderboards(player, args)
-    print("Commands.listLeaderboards")
-    for leaderboardID, _ in pairs(Leaderboard.registered_leaderboards) do
-        print("\t" .. leaderboardID)
-    end
-end
-
 
 ---@public
 ---@param player IsoPlayer
