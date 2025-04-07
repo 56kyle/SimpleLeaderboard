@@ -26,6 +26,8 @@ print("SimpleLeaderboard - Shared - Leaderboard - Loading")
 
 ---@generic T
 ---@class Leaderboard<T>
+---@field public REGISTERED_LEADERBOARDS_TABLE_SUFFIX string
+---@field public REGISTERED_LEADERBOARDS_TABLE_NAME string
 ---@field public ID LeaderboardID
 ---@field public MODULE_PREFIX string
 ---@field public TABLE_PREFIX string
@@ -53,6 +55,9 @@ local Factions = require("SimpleLeaderboard/Factions")
 
 local Players = require("SimpleLeaderboard/Players")
 
+Leaderboard.REGISTERED_LEADERBOARDS_TABLE_SUFFIX = "RegisteredLeaderboards"
+Leaderboard.REGISTERED_LEADERBOARDS_TABLE_NAME = mod_name..Leaderboard.REGISTERED_LEADERBOARDS_TABLE_SUFFIX
+
 Leaderboard.ID = "Base"
 Leaderboard.MODULE_PREFIX = "Leaderboard"
 
@@ -76,6 +81,7 @@ function Leaderboard.getLeaderboard(leaderboardID)
     end
     return leaderboard
 end
+
 
 ---@public
 ---@param leaderboardID LeaderboardID
@@ -190,5 +196,13 @@ function Leaderboard:comparePlayerRecords(playerA, playerB)
     --- Compare two records, used to determine record sorting
     return playerA.record > playerB.record
 end
+
+---@private
+---@param newGame boolean
+---@return nil
+local function onInitGlobalModData(newGame)
+    Leaderboard.registered_leaderboards = ModData:getOrCreate(Leaderboard.REGISTERED_LEADERBOARDS_TABLE_NAME)
+end
+Events.OnInitGlobalModData:Add(onInitGlobalModData)
 
 return Leaderboard
