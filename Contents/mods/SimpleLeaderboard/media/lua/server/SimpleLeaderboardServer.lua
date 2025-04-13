@@ -3,7 +3,7 @@
 local Constants = SimpleLeaderboard.Constants
 local MOD_NAME = Constants.MOD_NAME
 
-local Commands = require("SimpleLeaderboard/Commands")
+local Commands = require("SimpleLeaderboard/Client/Commands")
 
 local Util = SimpleLeaderboard.Util
 

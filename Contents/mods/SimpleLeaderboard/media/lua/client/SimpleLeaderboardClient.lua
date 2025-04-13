@@ -3,8 +3,8 @@ local Constants = SimpleLeaderboard.Constants
 local MOD_NAME = Constants.MOD_NAME
 
 local SimpleLeaderboardClientUI = require("SimpleLeaderboard/ClientUI")
-local Commands = require("SimpleLeaderboard/Commands")
-local API = require("SimpleLeaderboard/API")
+local Commands = require("SimpleLeaderboard/Client/Commands")
+local API = require("SimpleLeaderboard/Client/API")
 
 local SimpleLeaderboardClient = {}
 

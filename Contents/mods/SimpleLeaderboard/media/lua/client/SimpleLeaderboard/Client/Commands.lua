@@ -12,7 +12,7 @@ local MOD_NAME = Constants.MOD_NAME
 local Leaderboard = SimpleLeaderboard.Leaderboard
 
 
-local API = require("SimpleLeaderboard/API")
+local API = require("SimpleLeaderboard/Client/API")
 
 ---@public
 ---@param player IsoPlayer
